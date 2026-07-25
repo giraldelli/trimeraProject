@@ -36,6 +36,8 @@ const CharacterModal: React.FC<{ character: CharacterEntry; onClose: () => void 
     if (!character) return null;
     const totalPower = calculateTotalPower(character.attributes);
 
+    const showImage = ['Gaeziel Aud-Balder', 'Zamma Can-Legan', 'Sublimy Excelsior', 'Pawllon Brawller'].includes(character.name);
+
     return createPortal(
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-200">
             {/* Backdrop */}
@@ -53,12 +55,14 @@ const CharacterModal: React.FC<{ character: CharacterEntry; onClose: () => void 
                 </button>
 
                 {/* LEFT COLUMN: Image & Header (Mobile Top) */}
-                <div className="w-full md:w-5/12 h-72 md:h-full relative bg-black flex-shrink-0 group">
-                    <img
-                        src={character.image || `https://placehold.co/600x800?text=${character.name}`}
-                        alt={character.name}
-                        className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105"
-                    />
+                <div className={`w-full md:w-5/12 h-72 md:h-full relative ${showImage ? 'bg-black' : 'bg-trimera-forest'} flex-shrink-0 group`}>
+                    {showImage && (
+                        <img
+                            src={character.image || `https://placehold.co/600x800?text=${character.name}`}
+                            alt={character.name}
+                            className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105"
+                        />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-trimera-forest via-trimera-forest/20 to-transparent"></div>
 
                     {/* Mobile/Desktop Header Overlay */}
@@ -99,11 +103,11 @@ const CharacterModal: React.FC<{ character: CharacterEntry; onClose: () => void 
                                     <div className="absolute inset-0 border-4 border-trimera-gold rounded-full border-t-transparent animate-spin duration-[3s]"></div>
 
                                     <div className="flex flex-col items-center">
-                                        <span className="text-5xl font-title text-trimera-forest">{totalPower}</span>
+                                        <span className="text-5xl font-logo font-bold text-trimera-forest">{totalPower}</span>
                                         <span className="text-[10px] font-bold uppercase tracking-widest text-trimera-textMain/50">Total</span>
                                     </div>
                                 </div>
-                                <h3 className="font-title text-xl text-trimera-gold uppercase tracking-widest">Nível de Poder</h3>
+                                <h3 className="font-logo text-base font-bold text-trimera-gold uppercase tracking-wider mt-2">Nível de Poder</h3>
                             </div>
 
                             {/* Attributes Bars */}
@@ -194,40 +198,53 @@ export const PersonagensPage = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {filteredCharacters.map((char) => (
-                        <div
-                            key={char.id}
-                            onClick={() => setSelectedCharacter(char)}
-                            className="group cursor-pointer bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-trimera-stoneDark flex flex-col"
-                        >
-                            <div className="h-64 overflow-hidden relative">
-                                <img
-                                    src={char.image || `https://placehold.co/600x400?text=${char.name}`}
-                                    alt={char.name}
-                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                                <div className="absolute bottom-4 left-4 right-4">
-                                    <span className="inline-block px-2 py-1 mb-2 bg-trimera-gold text-trimera-forest text-[10px] font-bold uppercase tracking-widest rounded-sm shadow-md">
-                                        {char.role}
-                                    </span>
-                                    <h3 className="font-title text-2xl text-white drop-shadow-md">{char.name}</h3>
-                                </div>
-                            </div>
-                            <div className="p-6 flex-1 flex flex-col">
-                                <p className="font-body text-trimera-textMain/80 line-clamp-3 leading-relaxed mb-6 flex-1">
-                                    {char.description}
-                                </p>
+                    {filteredCharacters.map((char) => {
+                        const showImage = ['Gaeziel Aud-Balder', 'Zamma Can-Legan', 'Sublimy Excelsior', 'Pawllon Brawller'].includes(char.name);
+                        return (
+                            <div
+                                key={char.id}
+                                onClick={() => setSelectedCharacter(char)}
+                                className="group cursor-pointer bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:shadow-trimera-gold/20 hover:-translate-y-2 transition-all duration-500 border-2 border-trimera-stoneDark/60 hover:border-trimera-gold flex flex-col"
+                            >
+                                {showImage ? (
+                                    <div className="h-64 overflow-hidden relative">
+                                        <img
+                                            src={char.image || `https://placehold.co/600x400?text=${char.name}`}
+                                            alt={char.name}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                                        <div className="absolute bottom-4 left-4 right-4">
+                                            <span className="inline-block px-2 py-1 mb-2 bg-trimera-gold text-trimera-forest text-[10px] font-bold uppercase tracking-widest rounded-sm shadow-md">
+                                                {char.role}
+                                            </span>
+                                            <h3 className="font-title text-2xl text-white drop-shadow-md">{char.name}</h3>
+                                        </div>
+                                    </div>
+                                ) : null}
+                                <div className="p-6 flex-1 flex flex-col">
+                                    {!showImage && (
+                                        <div className="mb-4">
+                                            <span className="inline-block px-2 py-1 mb-2 bg-trimera-gold text-trimera-forest text-[10px] font-bold uppercase tracking-widest rounded-sm shadow-md">
+                                                {char.role}
+                                            </span>
+                                            <h3 className="font-title text-2xl text-trimera-forest">{char.name}</h3>
+                                        </div>
+                                    )}
+                                    <p className="font-body text-trimera-textMain/80 line-clamp-3 leading-relaxed mb-6 flex-1">
+                                        {char.description}
+                                    </p>
 
-                                {/* Button-like visual for expand */}
-                                <div className="mt-auto pt-4 border-t border-trimera-stoneDark">
-                                    <button className="w-full py-3 bg-trimera-forest text-trimera-gold font-ui font-bold uppercase text-xs tracking-widest rounded hover:bg-trimera-forestLight transition-colors flex items-center justify-center gap-2 group-hover:bg-trimera-gold group-hover:text-trimera-forest">
-                                        Ler História Completa <ArrowRight size={14} />
-                                    </button>
+                                    {/* Button-like visual for expand */}
+                                    <div className="mt-auto pt-4 border-t border-trimera-stoneDark">
+                                        <button className="w-full py-3 bg-trimera-forest text-trimera-gold font-ui font-bold uppercase text-xs tracking-widest rounded-lg hover:bg-trimera-forestLight transition-colors flex items-center justify-center gap-2 group-hover:bg-trimera-gold group-hover:text-trimera-forest">
+                                            Ler História Completa <ArrowRight size={14} />
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
 
                 {filteredCharacters.length === 0 && (
