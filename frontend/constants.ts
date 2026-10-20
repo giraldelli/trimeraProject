@@ -3,13 +3,14 @@ import { NavItem, CharacterEntry, LoreEntry } from './types';
 
 
 export const NAV_ITEMS: NavItem[] = [
-  { id: 'civilizacao', label: 'Civilização' },
+  { id: 'civilizacao', label: 'História' },
   { id: 'deuses', label: 'Deuses' },
   { id: 'energias', label: 'Energias' },
   { id: 'entidades', label: 'Entidades' },
   { id: 'personagens', label: 'Personagens' },
   { id: 'reinos', label: 'Reinos' },
   { id: 'regioes', label: 'Regiões' },
+  { id: 'racas', label: 'Raças' },
 ];
 
 export const MOCK_CHARACTERS: CharacterEntry[] = [
@@ -398,12 +399,37 @@ export const MOCK_DATA: { [key: string]: LoreEntry[] } = {
     { title: "Kenturin", description: "Uma cidade-estado mercantil vibrante e perigosa, famosa por abrigar a maior guilda de caçadores de recompensas de Trimera." }
   ],
   regioes: [
-    { title: "Winter-est", description: "Continente gélido, lar da família Trois e de guerreiros brutais conhecidos por sua resistência ao frio extremo." },
+    { title: "Winter-est", description: "Continente gélido habitado por pessoas frias e serenas. Seu poder militar é altamente desenvolvido, com guerreiros treinados sob rígidas tradições para não sentirem dor ou demonstrarem vulnerabilidade." },
     { title: "Whitsand-est", description: "Vastas planícies desérticas onde ocorreram grandes guerras continentais. Lar do deserto de Tândria." },
-    { title: "Trilayd", description: "Um continente misterioso formado por 3 ilhas paradisíacas (Paz, Magia e Controle), cercado por muros de mármore." },
-    { title: "Maltan", description: "O estado das lâminas, lar das 4 cidades com os melhores espadachins do mundo." },
-    { title: "Karkova", description: "Ilhas estratégicas que frequentemente entram em conflito com o continente de Winter-est." },
     { title: "Trindad", description: "Reino militarizado pobre em recursos, mas rico em guerreiros marciais como o clã Raskebein." },
-    { title: "Deserto de Kondor", description: "A região mais árida e mortal de Whitsand-est, conhecida como cemitério de exércitos e palco de batalhas históricas." }
+    { title: "Wind-est", description: "Continente caracterizado por uma grande miscigenação de raças e por comunidades socialmente desenvolvidas, receptivas e integradas." },
+    { title: "Azard", description: "Continente de nações rígidas e militaristas, marcado pelo forte treinamento de combate de suas elites guerreiras." },
+    { title: "Orfalia", description: "Continente de tradições guerreiras exóticas, conhecido por suas florestas gigantescas e caçadores de Gudans." },
+    { title: "Lemúry", description: "Continente envolto em mistérios antigos, ruínas esquecidas e uma forte presença de magia residual desde a era primordial." },
+    { title: "Sandest", description: "Continente caracterizado por vastas planícies desérticas que foram palco de grandes guerras históricas. Lar do deserto de Tândria." }
+  ],
+  racas: [
+    { title: "Primogênitos", description: "É a raça mais próxima dos Deuses, dotada de um senso de justiça e bondade excepcionalmente elevados, além de possuir as capacidades física e mental mais evoluídas de toda Trimera. Capazes de viver por milhares de anos, aproximadamente 500 anos após o seu surgimento, decidiram isolar-se para evitar interferências diretas no desenvolvimento e nas experiências das demais raças. A partir desse momento, passaram a catalogar os comportamentos gerais e a influenciar sutilmente o mundo por meio da criação de centros acadêmicos e universitários — promovendo o ensino de ética, civismo e moral —, bem como de torres militares para salvaguardar artefatos e relíquias divinas. Suas ações visam preservar a paz e a harmonia global até o eventual retorno dos três Deuses. Nascidos com memórias predefinidas para a construção e o progresso espiritual, os Primogênitos utilizam sua superioridade intelectual para guiar o mundo sutilmente, promovendo mudanças estruturais graduais sem a necessidade de intervenção física ou confronto direto." },
+    { title: "Trimérios", description: "Seres considerados comuns, sem habilidades mágicas latentes e de aparência convencional. Compõem a base demográfica de Trimera." },
+    { title: "Copalatãs", description: "Descendentes da deusa Camillya, caracterizados por uma agilidade física impressionante e extrema destreza corporal." },
+    { title: "Balyianos", description: "Descendentes do deus Pasukan, dotados de estatura colossal, porte físico imponente e força bruta extraordinária." },
+    { title: "Elementais", description: "Seres descendentes do deus Pakou, detentores do controle sobre os elementos naturais clássicos: água, fogo, vento e terra." },
+    { title: "Halv-blans", description: "Indivíduos híbridos que possuem uma herança ancestral dupla, misturando a descendência de duas linhagens distintas." },
+    { title: "Halvgøds", description: "Seres extremamente raros que carregam a herança de sangue dos três Deuses criadores. Possuem um talento inigualável que lhes permite dominar qualquer habilidade ou profissão com extrema facilidade." },
+    { title: "Titãs", description: "Gigantes de força monumental e origem misteriosa. Sua descendência e ancestralidade permanecem desconhecidas até mesmo pelos Primogênitos." },
+    { title: "Colossos", description: "Criaturas bestiais de dimensões colossais, ainda maiores do que os Titãs. São dotados de uma força devastadora e de uma imensa quantidade de energia espiritual concentrada em seus corpos." },
+    { title: "Naturions", description: "Uma raça pacífica de protetores das florestas e biomas naturais, concentrada principalmente nas matas gigantescas de Orfalia. São guardiões dotados de grandioso poder mágico natural, capazes de canalizar a magia celeste (criacionista) para gerar vegetações inteiras instantaneamente a partir de suas mãos e da energia vital do ambiente." },
+    { title: "Høligon", description: "Seres raríssimos que carregam uma combinação genética quádrupla. Devido a essa composição única, apresentam atributos e capacidades cognitivas muito superiores às raças convencionais." },
+    { title: "Prometheus", description: "Uma antiga linhagem de semideuses que servia diretamente aos Deuses no mundo espiritual. Atualmente, resta apenas um único sobrevivente vivo desta raça imensamente poderosa." },
+    { title: "Ordians", description: "Criaturas de grande estatura, compleição robusta e feições monstruosas que habitam o continente de Orfalia. Seu corpo possui uma densidade e resistência física que supera até mesmo a dos robustos Balyianos." },
+    { title: "Wanlies", description: "Pequenas criaturas mágicas que habitam as copas das árvores mais altas e as torres de castelos antigos, locais onde há alta concentração de energia mágica." },
+    { title: "Mahêr", description: "Seres de aparência física similar à dos Trimérios, porém com uma estrutura corporal esguia e delicada. Possuem uma agilidade equivalente à dos Copalatãs e são reconhecidos como a raça de maior intelecto em Trimera." },
+    { title: "Ydróbianos", description: "A civilização mais antiga de Trimera. São seres aquáticos velozes e dotados de imensa força, com poderes herdados diretamente das marés. Guardam forte antipatia pelas civilizações terrestres, acalentando o antigo desejo de submergir o planeta em um oceano global." },
+    { title: "Dargorians", description: "Descendentes diretos dos dragões, embora possuam aparência humana convencional. Detentores de poderosas habilidades oculares, compartilham um vínculo psíquico único que lhes permite localizar e comunicar-se telepaticamente com os dragões." },
+    { title: "Goldans", description: "Uma raça humana cuja principal característica física é possuir uma estrutura óssea constituída de ouro puro. Devido a essa rara e valiosa particularidade, foram implacavelmente caçados pela ganância de outrem e encontram-se à beira da extinção." },
+    { title: "Betrayais", description: "Uma raça historicamente marginalizada devido à sua necessidade instintiva por sangue e carne. Sob condições extremas de fome ou sede, sofrem uma mutação monstruosa que eleva drasticamente seus poderes físicos. Forçados ao exílio longe da civilização, deixaram como legado às demais raças as famosas 'Bibliotecas Betrayal'." },
+    { title: "Barsark", description: "Uma raça cujos poderes de combate e atributos físicos se alimentam diretamente da fúria. Possuem um temperamento altamente volátil e explosivo. Considerados instintivamente instáveis, qualquer contrariedade serve como estopim para que se entreguem ao estado de fúria cega." },
+    { title: "Gudans", description: "Seres reverenciados como semideuses, com aptidão para dominar qualquer disciplina ou habilidade existente. Atualmente raros devido aos conflitos da Guerra da Reconstrução, foram, ao lado dos Primogênitos, os primeiros povos a habitar Trimera no alvorecer da era primordial." },
+    { title: "Demônios", description: "Entidades originadas a partir da manifestação de energias obscuras e negativas vindas do plano espiritual. Seus sentimentos e ações são intrinsecamente governados pela maldade, tornando sua purificação quase impossível. São imensamente poderosos, equiparando-se ao nível dos Gudans, e possuem total imunidade ao medo e à dor física." }
   ]
 };

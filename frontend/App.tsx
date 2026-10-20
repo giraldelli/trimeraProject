@@ -10,6 +10,7 @@ import { EnergiasPage } from './pages/EnergiasPage';
 import { RegioesPage } from './pages/RegioesPage';
 import { PersonagensPage } from './pages/PersonagensPage';
 import { GenericPage } from './pages/GenericPage';
+import { RacasPage } from './pages/RacasPage';
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
           <Route path="/personagens" element={<PersonagensPage />} />
           <Route path="/reinos" element={<GenericPage title="Reinos" bg="bg-trimera-stone" items={MOCK_DATA.reinos} />} />
           <Route path="/regioes" element={<RegioesPage />} />
+          <Route path="/racas" element={<RacasPage />} />
         </Routes>
       </Layout>
     </HashRouter>

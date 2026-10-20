@@ -28,7 +28,7 @@ export const RegioesPage = () => (
                 {/* Regions List Column */}
                 <div className="space-y-6">
                     <h3 className="font-title text-2xl text-trimera-forest mb-6 border-b-2 border-trimera-gold pb-2 inline-block">
-                        Principais Regiões
+                        Continentes
                     </h3>
                     {MOCK_DATA.regioes?.map((region, idx) => (
                         <div key={idx} className="bg-white p-6 rounded-xl border border-trimera-stoneDark hover:border-trimera-gold shadow-md hover:shadow-lg transition-all group">
@@ -42,7 +42,7 @@ export const RegioesPage = () => (
                         </div>
                     ))}
                     {(!MOCK_DATA.regioes || MOCK_DATA.regioes.length === 0) && (
-                        <div className="p-6 text-center italic opacity-60">Nenhuma região mapeada ainda.</div>
+                        <div className="p-6 text-center italic opacity-60">Nenhum continente mapeado ainda.</div>
                     )}
                 </div>
             </div>
