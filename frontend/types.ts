@@ -1,5 +1,5 @@
 
-export type Page = 'home' | 'civilizacao' | 'deuses' | 'energias' | 'entidades' | 'personagens' | 'reinos' | 'regioes' | 'racas';
+export type Page = 'home' | 'civilizacao' | 'deuses' | 'energias' | 'entidades' | 'personagens' | 'reinos' | 'regioes' | 'racas' | 'reinos-e-regioes' | 'lendarios' | 'poderes' | 'tatuagens' | 'especializacoes';
 
 export interface NavItem {
   id: Page;

@@ -31,7 +31,7 @@ export const LandingPage = () => {
                     </p>
 
                     <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-                        <Link to="/regioes" className="group relative px-8 py-4 bg-trimera-gold text-trimera-forest font-ui font-bold uppercase tracking-wider rounded overflow-hidden hover:bg-trimera-goldHover transition-all shadow-lg hover:shadow-trimera-gold/50 w-full md:w-auto text-center">
+                        <Link to="/reinos-e-regioes#regioes" className="group relative px-8 py-4 bg-trimera-gold text-trimera-forest font-ui font-bold uppercase tracking-wider rounded overflow-hidden hover:bg-trimera-goldHover transition-all shadow-lg hover:shadow-trimera-gold/50 w-full md:w-auto text-center">
                             <span className="relative z-10 flex items-center justify-center gap-2">
                                 Explorar o Mapa <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                             </span>
@@ -47,7 +47,7 @@ export const LandingPage = () => {
             <section className="py-32 bg-trimera-stone bg-noise relative">
                 <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
                     {[
-                        { icon: Castle, title: "Reinos", desc: "Fortalezas erguidas sobre alicerces de magia.", link: "/reinos" },
+                        { icon: Castle, title: "Reinos", desc: "Fortalezas erguidas sobre alicerces de magia.", link: "/reinos-e-regioes#reinos" },
                         { icon: Zap, title: "Energia Vital", desc: "O fluxo que conecta toda a vida e matéria.", link: "/energias" },
                         { icon: ScrollText, title: "Arquivos Antigos", desc: "Pergaminhos que contam a verdade do universo.", link: "/civilizacao" }
                     ].map((feature, idx) => (

@@ -4,12 +4,9 @@ import { NavItem, CharacterEntry, LoreEntry } from './types';
 
 export const NAV_ITEMS: NavItem[] = [
   { id: 'civilizacao', label: 'História' },
-  { id: 'deuses', label: 'Deuses' },
   { id: 'energias', label: 'Energias' },
-  { id: 'entidades', label: 'Entidades' },
   { id: 'personagens', label: 'Personagens' },
-  { id: 'reinos', label: 'Reinos' },
-  { id: 'regioes', label: 'Regiões' },
+  { id: 'reinos-e-regioes', label: 'Reinos & Regiões' },
   { id: 'racas', label: 'Raças' },
 ];
 
