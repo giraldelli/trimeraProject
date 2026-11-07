@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import { MOCK_DATA } from './constants';
 import { Layout } from './components/Layout';
 import { LandingPage } from './pages/LandingPage';
-import { CivilizacaoPage } from './pages/CivilizacaoPage';
+import { HistoriasPage } from './pages/HistoriasPage';
+import { HistoriaJoelGinaPage } from './pages/HistoriaJoelGinaPage';
 import { DeusesPage } from './pages/DeusesPage';
 import { EnergiasPage } from './pages/EnergiasPage';
 import { ReinosRegioesPage } from './pages/ReinosRegioesPage';
@@ -22,7 +21,10 @@ const App: React.FC = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/civilizacao" element={<CivilizacaoPage />} />
+          <Route path="/historias" element={<HistoriasPage />} />
+          <Route path="/historias/joel-e-gina" element={<HistoriaJoelGinaPage />} />
+          <Route path="/historia" element={<HistoriasPage />} />
+          <Route path="/civilizacao" element={<HistoriasPage />} />
           <Route path="/deuses" element={<DeusesPage />} />
           <Route path="/energias" element={<EnergiasPage />} />
           <Route path="/entidades" element={<GenericPage title="Entidades" bg="bg-trimera-stone" items={[]} />} />

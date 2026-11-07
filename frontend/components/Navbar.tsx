@@ -80,7 +80,7 @@ export const Navbar: React.FC = () => {
     };
 
     const getLinkClass = (path: string) => {
-        const isActive = location.pathname === path;
+        const isActive = location.pathname === path || (path === '/historias' && ['/historias', '/historia', '/civilizacao'].includes(location.pathname));
         return `font-ui font-bold text-sm tracking-widest uppercase transition-all duration-300 px-4 py-2 rounded-md whitespace-nowrap ${isActive
                 ? 'text-trimera-gold'
                 : 'text-trimera-stone/80 hover:text-white hover:bg-white/10'

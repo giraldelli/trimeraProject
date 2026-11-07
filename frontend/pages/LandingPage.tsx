@@ -49,7 +49,7 @@ export const LandingPage = () => {
                     {[
                         { icon: Castle, title: "Reinos", desc: "Fortalezas erguidas sobre alicerces de magia.", link: "/reinos-e-regioes#reinos" },
                         { icon: Zap, title: "Energia Vital", desc: "O fluxo que conecta toda a vida e matéria.", link: "/energias" },
-                        { icon: ScrollText, title: "Arquivos Antigos", desc: "Pergaminhos que contam a verdade do universo.", link: "/civilizacao" }
+                        { icon: ScrollText, title: "Arquivos Antigos", desc: "Pergaminhos que contam a verdade do universo.", link: "/historias" }
                     ].map((feature, idx) => (
                         <Link key={idx} to={feature.link} className="block h-full group">
                             <div className="h-full p-8 bg-white rounded-2xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-trimera-stoneDark text-center cursor-pointer">
